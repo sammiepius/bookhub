@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import { login } from './utils/near';
+import { Notification } from './components/utils/Notification';
+import Books from './components/bookhub/Books';
+import Cover from './components/utils/Cover';
+import coverImg from './assets/img/istockphoto.jpg';
 import './App.css';
+import Index from './components/Footer';
+import BhNav from './components/Navbar';
 
-function App() {
+const App = function AppWrapper() {
+  const account = window.walletConnection.account();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Notification />
+      {account.accountId ? (
+        <div>
+          <BhNav />
+          <br />
+          <main>
+            <Books />
+          </main>
+
+
+          <Index />
+        </div>
+      ) : (
+        <Cover name="Bookhub" login={login} coverImg={coverImg} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
