@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/bookhub/static/css/main.5b92815d.chunk.css",
+    "main.js": "/bookhub/static/js/main.8e16236a.chunk.js",
+    "main.js.map": "/bookhub/static/js/main.8e16236a.chunk.js.map",
+    "runtime-main.js": "/bookhub/static/js/runtime-main.ec37392f.js",
+    "runtime-main.js.map": "/bookhub/static/js/runtime-main.ec37392f.js.map",
+    "static/css/2.cfca429e.chunk.css": "/bookhub/static/css/2.cfca429e.chunk.css",
+    "static/js/2.4ca3fff2.chunk.js": "/bookhub/static/js/2.4ca3fff2.chunk.js",
+    "static/js/2.4ca3fff2.chunk.js.map": "/bookhub/static/js/2.4ca3fff2.chunk.js.map",
+    "static/js/3.a505e37f.chunk.js": "/bookhub/static/js/3.a505e37f.chunk.js",
+    "static/js/3.a505e37f.chunk.js.map": "/bookhub/static/js/3.a505e37f.chunk.js.map",
+    "index.html": "/bookhub/index.html",
+    "static/css/2.cfca429e.chunk.css.map": "/bookhub/static/css/2.cfca429e.chunk.css.map",
+    "static/css/main.5b92815d.chunk.css.map": "/bookhub/static/css/main.5b92815d.chunk.css.map",
+    "static/js/2.4ca3fff2.chunk.js.LICENSE.txt": "/bookhub/static/js/2.4ca3fff2.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/bookhub/static/media/bootstrap-icons.6d63d050.woff2",
+    "static/media/istockphoto.b58fee4c.jpg": "/bookhub/static/media/istockphoto.b58fee4c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec37392f.js",
+    "static/css/2.cfca429e.chunk.css",
+    "static/js/2.4ca3fff2.chunk.js",
+    "static/css/main.5b92815d.chunk.css",
+    "static/js/main.8e16236a.chunk.js"
+  ]
+}
