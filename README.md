@@ -1,5 +1,5 @@
-Bookhub
-A decentralized marketplace built on the NEAR protocol, where people  can both buy and sell books on the NEAR blockchain
+##Bookhub
+A decentralized marketplace built on the NEAR protocol, where people can buy and sell books on the NEAR blockchain
 
 
 
