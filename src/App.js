@@ -3,7 +3,7 @@ import { login } from './utils/near';
 import { Notification } from './components/utils/Notification';
 import Books from './components/bookhub/Books';
 import Cover from './components/utils/Cover';
-import coverImg from './assets/img/istockphoto.jpg';
+import coverImg from './assets/img/undraw_read.svg';
 import './App.css';
 import Index from './components/Footer';
 import BhNav from './components/Navbar';
