@@ -1,3 +1,9 @@
+Bookhub
+A decentralized marketplace built on the NEAR protocol, where people  can both buy and sell books on the NEAR blockchain
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
