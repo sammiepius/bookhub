@@ -21,8 +21,6 @@ const App = function AppWrapper() {
           <main>
             <Books />
           </main>
-
-
           <Index />
         </div>
       ) : (

@@ -7,7 +7,7 @@ const nearEnv = environment('testnet');
 export async function initializeContract() {
   const near = await connect(
     Object.assign(
-      { keyStore: new keyStores.BrowserLocalStorageKeyStore() },
+      { deps: { keyStore: new keyStores.BrowserLocalStorageKeyStore() } },
       nearEnv
     )
   );
@@ -18,7 +18,7 @@ export async function initializeContract() {
     nearEnv.contractName,
     {
       viewMethods: ['getBook', 'getBooks'],
-      changeMethods: ['buyBook', 'setBook'],
+      changeMethods: ['buyBook', 'setBook', 'deleteBookById'],
     }
   );
 }

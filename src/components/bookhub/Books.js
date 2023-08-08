@@ -8,12 +8,15 @@ import { NotificationSuccess, NotificationError } from '../utils/Notification';
 import {
   getBooks as getBookList,
   buyBook,
+  // voteBook,
   createBook,
+  deleteBookById,
 } from '../../utils/bookhub';
 
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   const getBooks = useCallback(async () => {
     try {
@@ -41,6 +44,26 @@ const Books = () => {
     }
   };
 
+  // const voteBookItem = async (id, voteType) => {
+  //   try {
+  //     await voteBook({
+  //       id,
+  //       voteType,
+  //     }).then((resp) => getBooks());
+  //     toast(
+  //       <NotificationSuccess
+  //         text={voteType == 0 ? 'I disliked this book' : 'I liked this book'}
+  //       />
+  //     );
+  //   } catch (error) {
+  //     toast(
+  //       <NotificationError text={`Sorry,You have already voted before!`} />
+  //     );
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const buy = async (id, price) => {
     try {
       await buyBook({
@@ -55,6 +78,32 @@ const Books = () => {
       setLoading(false);
     }
   };
+
+  const deleteBook = async (id,) => {
+    try {
+      setDisable(true);
+      // toast.success("please wait your request is been processed")
+      deleteBookById(id).then((resp) => {
+        toast.success('Book deleted successfully');
+        getBooks();
+      });
+    } catch (error) {
+      setDisable(false);
+      toast.error('network error');
+    } finally {
+      setDisable(false);
+    }
+  };
+//   const deleteOwnerBook = async (id, owner) => {
+//     try {
+//         await deleteBook(id, owner).then(() => getBooks());
+//         toast(<NotificationSuccess text="Deleted successfully"/>);
+//     } catch (error) {
+//         toast(<NotificationError text="Failed to delete"/>);
+//     } finally {
+//         setLoading(false);
+//     }
+// };
 
   useEffect(() => {
     getBooks();
@@ -78,7 +127,9 @@ const Books = () => {
                 book={{
                   ..._book,
                 }}
+                // vote={voteBookItem}
                 buy={buy}
+                deleteBook={deleteBook}
               />
             ))}
           </Row>

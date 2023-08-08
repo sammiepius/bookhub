@@ -1,6 +1,7 @@
 import { Book, listedBooks } from './model';
 import { ContractPromiseBatch, context } from 'near-sdk-as';
 
+
 export function setBook(book: Book): void {
   let storedBook = listedBooks.get(book.id);
 
@@ -12,7 +13,7 @@ export function setBook(book: Book): void {
 }
 
 export function getBook(id: string): Book | null {
-  // assert that blog with given id exists
+  // assert that book with given id exists
   assert(listedBooks.contains(id), "This book doesn't exist");
   return listedBooks.get(id);
 }
@@ -21,6 +22,36 @@ export function getBook(id: string): Book | null {
 export function getBooks(): Book[] {
   return listedBooks.values();
 }
+
+// function that delete a book with a particular id
+export function deleteBookById(id: string): void {
+  Book.deleteBook(id);
+}
+
+
+// export function voteBook(bookId: string, voteType: u8) : bool {    
+//   const book = listedBooks.get(bookId);
+//   //check if book is null, in case book is null we can't access its properties
+//   if(book == null){
+//      return false;
+//   } else {
+//      return book.vote(voteType);
+//   } 
+// }
+
+export function getBookVotes(bookId: string) : Array<u32> | null {    
+  const book = listedBooks.get(bookId);
+  //check if book is null, in case book is null we can't access its properties
+  if(book == null){
+     return null;
+  } else {
+      let votes_length_array = new Array<u32>(2);
+      votes_length_array[0] = book.down_votes.size;
+      votes_length_array[1] = book.up_votes.size;
+      return votes_length_array;
+  } 
+}
+
 
 // A function use to buy a particular book using the book id
 export function buyBook(bookId: string): void {
