@@ -60,10 +60,10 @@ const Books = () => {
     }
   };
 
-  const deleteBook = async (id,) => {
+  const deleteBook = async (id) => {
     try {
       setDisable(true);
-      // toast.success("please wait your request is been processed")
+      toast.success("please wait your request is been processed")
       deleteBookById(id).then((resp) => {
         toast.success('Book deleted successfully');
         getBooks();

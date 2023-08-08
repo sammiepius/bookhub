@@ -28,20 +28,6 @@ export function deleteBookById(id: string): void {
   Book.deleteBook(id);
 }
 
-export function getBookVotes(bookId: string) : Array<u32> | null {    
-  const book = listedBooks.get(bookId);
-  //check if book is null, in case book is null we can't access its properties
-  if(book == null){
-     return null;
-  } else {
-      let votes_length_array = new Array<u32>(2);
-      votes_length_array[0] = book.down_votes.size;
-      votes_length_array[1] = book.up_votes.size;
-      return votes_length_array;
-  } 
-}
-
-
 // A function use to buy a particular book using the book id
 export function buyBook(bookId: string): void {
   const book = getBook(bookId); // retrieve book

@@ -14,8 +14,6 @@ export class Book {
   description: string;
   image: string;
   location: string;
-  up_votes: PersistentSet<string>;
-  down_votes: PersistentSet<string>;
   price: u128;
   owner: string;
   sold: u32;
@@ -29,15 +27,17 @@ export class Book {
     book.id = payload.id;
     book.location = payload.location;
     book.price = payload.price;
-    book.up_votes = payload.up_votes;
-    book.down_votes = payload.down_votes;
     book.owner = context.sender;
     return book;
   }
+
+  
   //incrementSoldAmount method increases the SOLD of the Book
   public incrementSoldAmount(): void {
     this.sold = this.sold + 1;
   }
+
+
   // method to delete a book
   public static deleteBook(id: string): void {
     logging.log(`deleting book`);
