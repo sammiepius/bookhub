@@ -44,25 +44,6 @@ const Books = () => {
     }
   };
 
-  // const voteBookItem = async (id, voteType) => {
-  //   try {
-  //     await voteBook({
-  //       id,
-  //       voteType,
-  //     }).then((resp) => getBooks());
-  //     toast(
-  //       <NotificationSuccess
-  //         text={voteType == 0 ? 'I disliked this book' : 'I liked this book'}
-  //       />
-  //     );
-  //   } catch (error) {
-  //     toast(
-  //       <NotificationError text={`Sorry,You have already voted before!`} />
-  //     );
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   const buy = async (id, price) => {
     try {
@@ -94,16 +75,6 @@ const Books = () => {
       setDisable(false);
     }
   };
-//   const deleteOwnerBook = async (id, owner) => {
-//     try {
-//         await deleteBook(id, owner).then(() => getBooks());
-//         toast(<NotificationSuccess text="Deleted successfully"/>);
-//     } catch (error) {
-//         toast(<NotificationError text="Failed to delete"/>);
-//     } finally {
-//         setLoading(false);
-//     }
-// };
 
   useEffect(() => {
     getBooks();

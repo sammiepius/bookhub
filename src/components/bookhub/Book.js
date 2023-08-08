@@ -36,24 +36,6 @@ const Book = ({ book, buy, vote, deleteBook }) => {
         <Card.Header>
           <Stack direction="horizontal" gap={2}>
             <span className="font-monospace text-secondary">{owner}</span>{' '}
-            {/* <button
-              type="button"
-              class="btn btn-success position-relative btn-xs ms-auto"
-              onClick={() => triggerVote(1)}>
-              <i class="bi bi-emoji-smile"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
-                {upvotes_count}
-              </span>
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger position-relative btn-xs ms-auto"
-              onClick={() => triggerVote(0)}>
-              <i class="bi bi-emoji-frown-fill"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
-                {downvotes_count}
-              </span>
-            </button> */}
             <Badge bg="secondary" className="ms-auto">
               {sold} Sold
             </Badge>
@@ -72,7 +54,7 @@ const Book = ({ book, buy, vote, deleteBook }) => {
             <Button
               variant="outline-dark"
               onClick={triggerDelete}
-              className="w-100 py-3 btn">
+              className="w-100 py-3 btn-danger">
               Delete book
             </Button>
           ) : (
@@ -83,29 +65,6 @@ const Book = ({ book, buy, vote, deleteBook }) => {
             Buy for {utils.format.formatNearAmount(price)} NEAR
           </Button>
           )}
-          {/* <Button
-            variant="outline-dark"
-            onClick={triggerBuy}
-            className="w-100 py-3">
-            Buy for {utils.format.formatNearAmount(price)} NEAR
-          </Button>
-          <Button onClick={triggerDelete}>delete book</Button> */}
-          {/* <span></span> */}
-          {/* <button
-              type="button"
-              class="btn btn-success position-relative btn-xs ms-auto"
-              onClick={() => triggerVote(1)}>
-              <i class="bi bi-emoji-smile"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
-                {upvotes_count}
-              </span>
-            </button>
-            <button type="button" class="btn btn-danger position-relative btn-xs ms-auto" onClick={() => triggerVote(0)}>
-            <i class="bi bi-emoji-frown-fill"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
-               {downvotes_count}            
-              </span>
-            </button> */}
         </Card.Body>
       </Card>
     </Col>
@@ -115,7 +74,6 @@ const Book = ({ book, buy, vote, deleteBook }) => {
 Book.propTypes = {
   book: PropTypes.instanceOf(Object).isRequired,
   buy: PropTypes.func.isRequired,
-  vote : PropTypes.func.isRequired,
   deleteBook: PropTypes.func.isRequired,
 };
 

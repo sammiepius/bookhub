@@ -28,17 +28,6 @@ export function deleteBookById(id: string): void {
   Book.deleteBook(id);
 }
 
-
-// export function voteBook(bookId: string, voteType: u8) : bool {    
-//   const book = listedBooks.get(bookId);
-//   //check if book is null, in case book is null we can't access its properties
-//   if(book == null){
-//      return false;
-//   } else {
-//      return book.vote(voteType);
-//   } 
-// }
-
 export function getBookVotes(bookId: string) : Array<u32> | null {    
   const book = listedBooks.get(bookId);
   //check if book is null, in case book is null we can't access its properties

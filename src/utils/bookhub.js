@@ -17,14 +17,6 @@ export async function buyBook({ id, price }) {
   await window.contract.buyBook({ bookId: id }, GAS, price);
 }
 
-// export async function voteBook({id, voteType}){
-//   const isSuccess = await window.contract.voteBook({bookId: id, voteType: voteType}, GAS);
-//   if (isSuccess){
-//      return Promise.resolve(isSuccess);
-//   } else{
-//     return Promise.reject();
-//   }
-// }
 
 export function deleteBookById(id) {
   return window.contract.deleteBookById({id});

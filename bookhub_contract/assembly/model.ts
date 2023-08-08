@@ -48,22 +48,6 @@ export class Book {
       listedBooks.delete(beat.id);
     }
   }
-  // public vote(voteType: u8): bool {
-  //   const senderAccount = context.sender;
-  //   assert(!this.down_votes.has(senderAccount), 'already voted');
-  //   assert(!this.up_votes.has(senderAccount), 'already voted');
-  //   assert(voteType == 0 || voteType == 1, 'not a valid vote');
-  //   switch (voteType) {
-  //     case 0:
-  //       this.down_votes.add(senderAccount);
-  //       return true;
-
-  //     case 1:
-  //       this.up_votes.add(senderAccount);
-  //       return true;
-  //   }
-  //   return false;
-  // }
 }
 
 // A key value dataStructure used to store purchased book
